@@ -1,14 +1,14 @@
 package dsa.main;
 
-import dsa.sorting.BubbleSort;
+import dsa.sorting.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {5, 1, 4, 2};
+        int[] arr = {5, 55, 12, 1, 66, 4, 2};
 
-        BubbleSort.sort(arr);
+        InsertionSort.sort(arr);
 
         for (int num : arr) {
             System.out.print(num + " ");
