@@ -8,7 +8,7 @@ public class Main {
 
         int[] arr = {5, 55, 12, 1, 66, 4, 2};
 
-        InsertionSort.sort(arr);
+        ShellSort.sort(arr);
 
         for (int num : arr) {
             System.out.print(num + " ");
