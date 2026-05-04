@@ -8,10 +8,11 @@ public class Main {
 
         int[] arr = {5, 55, 12, 1, 66, 4, 2};
 
-        ShellSort.sort(arr);
+        QuickSort.sort(arr);
 
         for (int num : arr) {
             System.out.print(num + " ");
         }
+        System.out.println("");
     }
 }
