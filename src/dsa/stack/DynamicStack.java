@@ -1,24 +1,33 @@
 package dsa.stack;
 
-public class StackArray {
+public class DynamicStack {
+
     private int[] arr;
     private int top;
     private int maxSize;
 
-    public StackArray(int maxSize) {
-        this.maxSize = maxSize;
+    public DynamicStack(int size) {
+        this.maxSize = size;
         arr = new int[maxSize];
         top = -1;
     }
 
+    private void resize() {
+        maxSize *= 2;
+        int[] newArr = new int[maxSize];
+        for (int i = 0; i <= top; i++)
+            newArr[i] = arr[i];
+        arr = newArr;
+    }
+
     public void push(int value) {
         if (isFull())
-            throw new IllegalStateException("Stack is full!!");
+            resize();
         arr[++top] = value;
     }
 
     public int pop() {
-        if (isEmpty())
+        if (isEmpty()) 
             throw new IllegalStateException("Stack is empty");
         return arr[top--];
     }
@@ -34,6 +43,6 @@ public class StackArray {
     }
 
     public boolean isFull() {
-        return top == maxSize-1;
+        return top == maxSize - 1;
     }
 }
