@@ -1,18 +1,19 @@
 package dsa.main;
 
-import dsa.stack.*;
+import dsa.queue.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        DynamicStack stack = new DynamicStack(2);
-        
-        stack.push(12);
-        stack.push(6);
-        stack.push(55);
-        stack.push(43);
-        stack.push(1);
-        System.out.println(stack.pop());;
+        QueueArray que = new QueueArray(5);
+        que.enqueue(5);
+        que.enqueue(12);
+        que.enqueue(3);
+        que.enqueue(4);
+        que.enqueue(66);
+        System.out.println(que.dequeue());
+        System.out.println(que.peek());
+        System.out.println(que.dequeue());
     }
 }
