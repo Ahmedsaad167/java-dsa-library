@@ -5,15 +5,15 @@ import dsa.queue.*;
 public class Main {
 
     public static void main(String[] args) {
+        CircularQueueArray q = new CircularQueueArray(3);
 
-        QueueArray que = new QueueArray(5);
-        que.enqueue(5);
-        que.enqueue(12);
-        que.enqueue(3);
-        que.enqueue(4);
-        que.enqueue(66);
-        System.out.println(que.dequeue());
-        System.out.println(que.peek());
-        System.out.println(que.dequeue());
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+
+        q.dequeue();
+        q.enqueue(4);
+
+        System.out.println(q.peek());
     }
 }
