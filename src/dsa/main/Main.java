@@ -1,19 +1,16 @@
 package dsa.main;
 
-import dsa.queue.*;
+import dsa.linkedlist.SinglyLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        CircularQueueArray q = new CircularQueueArray(3);
+        SinglyLinkedList list = new SinglyLinkedList();
 
-        q.enqueue(1);
-        q.enqueue(2);
-        q.enqueue(3);
+        list.insertFirst(10);
+        list.insertFirst(20);
+        list.insertFirst(30);
 
-        q.dequeue();
-        q.enqueue(4);
-
-        System.out.println(q.peek());
+        list.display();
     }
 }
