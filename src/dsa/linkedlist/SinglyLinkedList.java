@@ -55,9 +55,21 @@ public class SinglyLinkedList {
             first = first.next;
         else
             previous.next = current.next;
-        return current;
+        return current;   
+    }
 
-        
+    public void reverse() {
+        Node previous = null;
+        Node current = first;
+        Node next;
+
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        first = previous;
     }
 
     public boolean isEmpty() {
