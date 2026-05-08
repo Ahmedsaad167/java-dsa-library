@@ -7,12 +7,12 @@ public class Main {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
 
-        list.insertLast(10);
-        list.insertLast(20);
-        list.insertLast(30);
+        list.insertFirst(30);
+        list.insertFirst(20);
+        list.insertFirst(10);
 
-        list.delete(20);
-
+        list.display();
+        list.reverse();
         list.display();
     }
 }
