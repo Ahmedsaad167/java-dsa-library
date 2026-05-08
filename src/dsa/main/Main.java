@@ -1,18 +1,18 @@
 package dsa.main;
 
+import dsa.linkedlist.DoublyLinkedList;
 import dsa.linkedlist.SinglyLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
+        DoublyLinkedList list = new DoublyLinkedList();
 
-        list.insertFirst(30);
-        list.insertFirst(20);
         list.insertFirst(10);
+        list.insertLast(20);
+        list.insertLast(30);
 
-        list.display();
-        list.reverse();
-        list.display();
+        list.displayForward();
+        list.displayBackward();
     }
 }
