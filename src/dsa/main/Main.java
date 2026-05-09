@@ -1,19 +1,20 @@
 package dsa.main;
 
-import dsa.linkedlist.DoublyLinkedList;
+import dsa.stack.LinkedStack;
 
 public class Main {
 
     public static void main(String[] args) {
-        DoublyLinkedList list = new DoublyLinkedList();
+        LinkedStack stack = new LinkedStack();
 
-        list.insertLast(10);
-        list.insertLast(20);
-        list.insertLast(30);
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
 
-        list.insertAfter(30, 25);
+        stack.display();
 
-        list.displayForward();
-        list.displayBackward();
+        stack.pop();
+
+        stack.display();
     }
 }
