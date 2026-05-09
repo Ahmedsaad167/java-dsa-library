@@ -5,7 +5,7 @@ import dsa.recursion.RecursionExamples;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(RecursionExamples.factorial(5));
-        System.out.println(RecursionExamples.fibonacci(5));
+        int[] arr = {1, 4, 6, 11, 56, 90, 102, 500};
+        System.out.println("Index: " + RecursionExamples.binarySearch(arr, 200));
     }
 }
