@@ -1,20 +1,11 @@
 package dsa.main;
 
-import dsa.queue.LinkedQueue;
+import dsa.recursion.RecursionExamples;
 
 public class Main {
 
     public static void main(String[] args) {
-        LinkedQueue queue = new LinkedQueue();
-
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-
-        queue.display();
-
-        queue.dequeue();
-
-        queue.display();
+        System.out.println(RecursionExamples.factorial(5));
+        System.out.println(RecursionExamples.fibonacci(5));
     }
 }
