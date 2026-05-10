@@ -44,4 +44,46 @@ public class BinarySearchTree {
         }
         return false;
     }
+
+    public void inorder() {
+        System.out.print("Tree (Inorder): ");
+        recInorder(root);
+        System.out.println("");
+    }
+    
+    private void recInorder(TreeNode node) {
+        if (node != null) {
+            recInorder(node.leftChild);
+            System.out.print(node.data + "  ");
+            recInorder(node.rightChild);
+        }
+    }
+    
+    public void preorder() {
+        System.out.print("Tree (Preorder): ");
+        recPreorder(root);
+        System.out.println("");
+    }
+    
+    private void recPreorder(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.data + "  ");
+            recPreorder(node.leftChild);
+            recPreorder(node.rightChild);
+        }
+    }
+    
+    public void postorder() {
+        System.out.print("Tree (Postorder): ");
+        recPostorder(root);
+        System.out.println("");
+    }
+
+    private void recPostorder(TreeNode node) {
+        if (node != null) {
+            recPostorder(node.leftChild);
+            recPostorder(node.rightChild);
+            System.out.print(node.data + "  ");
+        }
+    }
 }

@@ -11,8 +11,16 @@ public class Main {
         bst.insert(25);
         bst.insert(75);
         bst.insert(10);
+        bst.insert(30);
+        bst.insert(60);
+        bst.insert(90);
 
-        System.out.println(bst.find(25));
-        System.out.println(bst.find(100));
+        bst.inorder();
+        System.out.println();
+
+        bst.preorder();
+        System.out.println();
+
+        bst.postorder();
     }
 }
