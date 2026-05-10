@@ -12,15 +12,13 @@ public class Main {
         bst.insert(75);
         bst.insert(10);
         bst.insert(30);
-        bst.insert(60);
-        bst.insert(90);
 
         bst.inorder();
-        System.out.println();
 
-        bst.preorder();
-        System.out.println();
-
-        bst.postorder();
+        bst.delete(25);
+        bst.inorder();
+        
+        bst.delete(50);
+        bst.inorder();
     }
 }

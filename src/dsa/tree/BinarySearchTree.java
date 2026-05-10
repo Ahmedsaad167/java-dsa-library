@@ -45,10 +45,86 @@ public class BinarySearchTree {
         return false;
     }
 
+    public boolean delete(int key) {
+        TreeNode current = root;
+        TreeNode parent = root;
+        boolean isLeft = true;
+        while (current != null && current.data != key) {
+            parent = current;
+            if (current.data > key) {
+                isLeft = true;
+                current = current.leftChild;
+            }
+            else {
+                isLeft = false;
+                current = current.rightChild;
+            }
+        }
+        if (current == null)
+            return false;
+
+        if (current.leftChild == null && current.rightChild == null) {
+            if (current == root)
+                root = null;
+            else if (isLeft)
+                parent.leftChild = null;
+            else
+                parent.rightChild = null;
+        }
+
+        else if (current.leftChild == null) {
+            if (current == root)
+                root = current.rightChild;
+            else if (isLeft)
+                parent.leftChild = current.rightChild;
+            else
+                parent.rightChild = current.rightChild;
+        }
+
+        else if (current.rightChild == null) {
+            if (current == root)
+                root = current.leftChild;
+            else if (isLeft)
+                parent.leftChild = current.leftChild;
+            else
+                parent.rightChild = current.leftChild;
+        }
+
+        else {
+            TreeNode successor = getSuccessor(current);
+            if (current == root)
+                root = successor;
+            else if (isLeft)
+                parent.leftChild = successor;
+            else
+                parent.rightChild = successor;
+            successor.leftChild = current.leftChild;
+        }
+        return true;
+
+    }
+
+    private TreeNode getSuccessor(TreeNode node) {
+        TreeNode successorParent = node;
+        TreeNode successor = node;
+        TreeNode current = node.rightChild;
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.leftChild;
+        }
+        if (successor != node.rightChild) {
+            successorParent.leftChild = successor.rightChild;
+            successor.rightChild = node.rightChild;
+        }
+        return successor;
+
+    }
+
     public void inorder() {
         System.out.print("Tree (Inorder): ");
         recInorder(root);
-        System.out.println("");
+        System.out.println();
     }
     
     private void recInorder(TreeNode node) {
@@ -62,7 +138,7 @@ public class BinarySearchTree {
     public void preorder() {
         System.out.print("Tree (Preorder): ");
         recPreorder(root);
-        System.out.println("");
+        System.out.println();
     }
     
     private void recPreorder(TreeNode node) {
@@ -76,7 +152,7 @@ public class BinarySearchTree {
     public void postorder() {
         System.out.print("Tree (Postorder): ");
         recPostorder(root);
-        System.out.println("");
+        System.out.println();
     }
 
     private void recPostorder(TreeNode node) {
