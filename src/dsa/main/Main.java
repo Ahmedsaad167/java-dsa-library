@@ -1,24 +1,16 @@
 package dsa.main;
 
-import dsa.tree.BinarySearchTree;
+import dsa.heap.MaxHeap;
 
 public class Main {
 
     public static void main(String[] args) {
-        BinarySearchTree bst = new BinarySearchTree();
+        MaxHeap heap = new MaxHeap(10);
 
-        bst.insert(50);
-        bst.insert(25);
-        bst.insert(75);
-        bst.insert(10);
-        bst.insert(30);
+        heap.insert(70);
+        heap.insert(40);
+        heap.insert(50);
 
-        bst.inorder();
-
-        bst.delete(25);
-        bst.inorder();
-        
-        bst.delete(50);
-        bst.inorder();
+        heap.display();
     }
 }
