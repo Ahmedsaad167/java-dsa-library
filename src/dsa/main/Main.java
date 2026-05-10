@@ -1,11 +1,15 @@
 package dsa.main;
 
-import dsa.recursion.RecursionExamples;
+import dsa.sorting.MergeSort;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {1, 4, 6, 11, 56, 90, 102, 500};
-        System.out.println("Index: " + RecursionExamples.binarySearch(arr, 200));
+        int[] arr = {8, 3, 5, 1, 9, 2};
+
+        MergeSort.sort(arr);
+
+        for (int num : arr)
+            System.out.print(num + " ");
     }
 }
