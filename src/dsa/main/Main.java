@@ -1,16 +1,16 @@
 package dsa.main;
 
-import dsa.heap.MaxHeap;
+import dsa.sorting.HeapSort;
 
 public class Main {
 
     public static void main(String[] args) {
-        MaxHeap heap = new MaxHeap(10);
+        int[] arr = {70, 40, 50, 90, 20};
 
-        heap.insert(70);
-        heap.insert(40);
-        heap.insert(50);
+        HeapSort.sort(arr);
 
-        heap.display();
+        for (int num : arr)
+            System.out.print(num + " ");
+        System.out.println();
     }
 }
