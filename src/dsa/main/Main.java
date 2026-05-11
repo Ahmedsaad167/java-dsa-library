@@ -1,20 +1,21 @@
 package dsa.main;
 
-import dsa.hash.chain.ChainedHashTable;
+import dsa.queue.priorityqueue.PriorityQueueArray;
 
 public class Main {
 
     public static void main(String[] args) {
-        ChainedHashTable table = new ChainedHashTable(10);
+        PriorityQueueArray pq = new PriorityQueueArray(10);
 
-        table.insert(21);
-        table.insert(31);
-        table.insert(55);
-        table.insert(214);
-        table.insert(41);
-        table.display();
-        table.delete(31);
-        
-        table.display();
+        pq.insert(30);
+        pq.insert(10);
+        pq.insert(50);
+        pq.insert(20);
+
+        pq.display();
+
+        System.out.println(pq.remove());
+
+        pq.display();
     }
 }
