@@ -1,22 +1,20 @@
 package dsa.main;
 
-import dsa.hash.HashTable;
+import dsa.hash.chain.ChainedHashTable;
 
 public class Main {
 
     public static void main(String[] args) {
-        HashTable table = new HashTable(10);
+        ChainedHashTable table = new ChainedHashTable(10);
 
-        table.insert(37);
-        table.insert(27);
-        table.insert(17);
-
+        table.insert(21);
+        table.insert(31);
+        table.insert(55);
+        table.insert(214);
+        table.insert(41);
         table.display();
-
-        table.delete(27);
-
+        table.delete(31);
+        
         table.display();
-
-        System.out.println(table.find(17));
     }
 }
