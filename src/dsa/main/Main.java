@@ -1,16 +1,19 @@
 package dsa.main;
 
-import dsa.sorting.HeapSort;
+import dsa.hash.HashTable;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {70, 40, 50, 90, 20};
+        HashTable table = new HashTable(10);
 
-        HeapSort.sort(arr);
+        table.insert(37);
+        table.insert(27);
+        table.insert(17);
 
-        for (int num : arr)
-            System.out.print(num + " ");
-        System.out.println();
+        table.display();
+
+        System.out.println(table.find(27));
+        System.out.println(table.find(99));
     }
 }
