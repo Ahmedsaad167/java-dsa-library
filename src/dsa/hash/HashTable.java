@@ -36,6 +36,20 @@ public class HashTable {
         return false;
     }
 
+    public DataItem delete(int key) {
+        int index = hashFunction(key);
+        while (hashArray[index] != null) {
+            if (hashArray[index].data == key) {
+                DataItem temp = hashArray[index];
+                hashArray[index] = nonItem;
+                return temp;
+            }
+            index++;
+            index %= size;
+        }
+        return null;
+    }
+
     public void display() {
         System.out.print("Hash Table: ");
         for (DataItem item : hashArray) {

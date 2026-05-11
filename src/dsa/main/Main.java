@@ -13,7 +13,10 @@ public class Main {
 
         table.display();
 
-        System.out.println(table.find(27));
-        System.out.println(table.find(99));
+        table.delete(27);
+
+        table.display();
+
+        System.out.println(table.find(17));
     }
 }
